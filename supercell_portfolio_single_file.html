@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Abuzar — Supercell Marketing Portfolio</title>
+  <meta name="description" content="Portfolio for the Supercell Clash of Clans Marketing Intern application." />
+  <style>
+    :root{
+      --bg:#0a0a0f;
+      --panel:#12121a;
+      --panel2:#171722;
+      --text:#f5f5f7;
+      --muted:#b4b4c7;
+      --line:rgba(255,255,255,.10);
+      --accent:#f4c84a;
+      --accent2:#7ab7ff;
+      --soft:#1f1f2d;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(244,200,74,.16), transparent 26%),
+        radial-gradient(circle at top left, rgba(122,183,255,.14), transparent 26%),
+        linear-gradient(180deg, #11111a 0%, #0a0a0f 45%, #0a0a0f 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+    .hero{padding:72px 0 48px;border-bottom:1px solid var(--line)}
+    .badge{
+      display:inline-block;padding:8px 14px;border:1px solid rgba(244,200,74,.35);
+      background:rgba(244,200,74,.10);color:#ffe7a0;border-radius:999px;font-size:14px
+    }
+    h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;margin:18px 0 0;font-weight:800;letter-spacing:-.03em}
+    .accent{color:var(--accent)}
+    .hero-grid,.grid-2,.grid-3,.grid-4{display:grid;gap:24px}
+    .hero-grid{grid-template-columns:1.2fr .8fr;align-items:center;margin-top:24px}
+    .lead{font-size:1.15rem;color:var(--muted);max-width:760px}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{
+      display:inline-block;padding:14px 18px;border-radius:18px;text-decoration:none;
+      font-weight:700;border:1px solid var(--line)
+    }
+    .btn-primary{background:var(--accent);color:#111}
+    .btn-secondary{background:rgba(255,255,255,.04)}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--line);border-radius:28px;padding:26px
+    }
+    .card h3,.card h2{margin:0 0 10px}
+    .pill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+    .pill{
+      background:#12121a;border:1px solid var(--line);border-radius:18px;padding:14px 16px;color:#ddd
+    }
+    section{padding:54px 0}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .eyebrow{
+      text-transform:uppercase;letter-spacing:.22em;color:#d7d7e6;font-size:.82rem
+    }
+    .muted{color:var(--muted)}
+    .feature{
+      background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:22px;padding:18px
+    }
+    .project{
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.025)
+    }
+    .step{
+      display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.04);
+      border:1px solid var(--line);border-radius:24px;padding:20px
+    }
+    .num{
+      width:48px;height:48px;border-radius:18px;background:var(--accent);color:#111;
+      display:grid;place-items:center;font-weight:800;flex:0 0 48px
+    }
+    .taglist{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .tag{
+      border:1px solid var(--line);padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.04);color:#e6e6ef;font-size:.95rem
+    }
+    ul{padding-left:20px}
+    li{margin:8px 0}
+    .contact{
+      background:linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border:1px solid var(--line);border-radius:30px;padding:28px
+    }
+    .footer{padding:28px 0 44px;color:var(--muted);font-size:.95rem}
+    .small{font-size:.96rem}
+    .projectshot{
+      background:
+        linear-gradient(180deg, rgba(244,200,74,.10), rgba(255,255,255,.02)),
+        #0e0e15;
+      border:1px solid rgba(244,200,74,.18);
+      border-radius:28px;padding:18px
+    }
+    .mockbar{display:flex;gap:8px;margin-bottom:14px}
+    .dot{width:10px;height:10px;border-radius:999px;background:rgba(255,255,255,.25)}
+    .mock-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    .mock-left,.mock-right{display:grid;gap:12px}
+    .mock-box{
+      border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:14px
+    }
+    .kpi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+    .kpi .mock-box strong{display:block;font-size:1.2rem}
+    @media (max-width: 900px){
+      .hero-grid,.grid-2,.grid-3,.grid-4,.mock-grid{grid-template-columns:1fr}
+      .pill-grid{grid-template-columns:1fr}
+      section{padding:42px 0}
+      .hero{padding-top:48px}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">Portfolio for Supercell — Clash of Clans Marketing Intern</span>
+      <div class="hero-grid">
+        <div>
+          <h1>Muhammad Abuzar <span class="accent">Marketing Portfolio</span></h1>
+          <p class="lead">
+            I am a master’s student in Finland with hands-on experience in marketing support,
+            communication, coordination, and community-facing work. This portfolio highlights a
+            project tailored to the Clash of Clans Marketing Intern role: a mobile game campaign
+            tracker and content calendar built for live-service marketing workflows.
+          </p>
+          <div class="btns">
+            <a class="btn btn-primary" href="#project">View Featured Project</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Focus</div>
+          <h2>Player-Focused Marketing Support</h2>
+          <p class="muted small">Built around campaign coordination, content planning, reporting, documentation, community support, and AI-assisted workflows.</p>
+          <div class="pill-grid">
+            <div class="pill">Campaign Coordination</div>
+            <div class="pill">Content Calendars</div>
+            <div class="pill">Reporting Summaries</div>
+            <div class="pill">Community Support</div>
+            <div class="pill">Asset Tracking</div>
+            <div class="pill">Documentation</div>
+            <div class="pill">AI-Assisted Workflows</div>
+            <div class="pill">Cross-Team Collaboration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap grid-3">
+      <div class="card">
+        <div class="eyebrow">Background</div>
+        <h3>Technical + Marketing</h3>
+        <p class="muted">My background combines engineering studies with marketing support, communication, and community-oriented work.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">What I enjoy</div>
+        <h3>Organizing fast-moving work</h3>
+        <p class="muted">I like helping teams stay aligned through trackers, content calendars, summaries, and clear communication.</p>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Current growth</div>
+        <h3>Building in Finland</h3>
+        <p class="muted">I am improving my Finnish through extra courses from Metropolia and actively participating in co-curricular activities, including marketing support work with VES in Vaasa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="project" class="project">
+    <div class="wrap">
+      <div class="eyebrow" style="color:#ffe7a0">Featured Project</div>
+      <h2 style="font-size:clamp(2rem,4vw,3.6rem);margin:.4rem 0 0">Mobile Game Campaign Tracker & Content Calendar</h2>
+      <p class="lead" style="max-width:860px">
+        A portfolio case study designed around the realities of live mobile game marketing:
+        seasonal events, content drops, asset coordination, approvals, player-facing updates,
+        and post-campaign reporting.
+      </p>
+
+      <div class="grid-2" style="margin-top:26px">
+        <div class="card">
+          <div class="eyebrow">Project summary</div>
+          <h3>Spring Siege Event — mock campaign</h3>
+          <p class="muted">
+            For this project, I imagined a fictional seasonal in-game event for a live mobile
+            strategy game. The goal was to build a practical support system that helps a marketing team
+            plan launches, keep assets organized, track deadlines, and make sure player communication is timely and clear.
+          </p>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="feature"><strong>Campaign goal</strong><br><span class="muted">Drive excitement around a seasonal live event</span></div>
+            <div class="feature"><strong>Primary channels</strong><br><span class="muted">Social, community updates, creator support</span></div>
+            <div class="feature"><strong>Core focus</strong><br><span class="muted">Coordination, content planning, reporting</span></div>
+            <div class="feature"><strong>Workflow support</strong><br><span class="muted">Approvals, trackers, documentation, AI support</span></div>
+          </div>
+        </div>
+
+        <div class="projectshot">
+          <div class="mockbar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          </div>
+          <div class="mock-grid">
+            <div class="mock-left">
+              <div class="mock-box"><strong>Campaign Tracker</strong><br><span class="muted small">Owners, status, deadlines, blockers, approvals</span></div>
+              <div class="mock-box"><strong>Content Calendar</strong><br><span class="muted small">Teasers, launch posts, reminders, go-live timing</span></div>
+              <div class="mock-box"><strong>Asset Library</strong><br><span class="muted small">Briefs, notes, references, final files</span></div>
+            </div>
+            <div class="mock-right">
+              <div class="mock-box"><strong>Weekly Summary</strong><br><span class="muted small">What shipped, what changed, what’s next</span></div>
+              <div class="kpi">
+                <div class="mock-box"><strong>12</strong><span class="muted small">content items tracked</span></div>
+                <div class="mock-box"><strong>4</strong><span class="muted small">channels coordinated</span></div>
+                <div class="mock-box"><strong>1</strong><span class="muted small">campaign brief</span></div>
+                <div class="mock-box"><strong>3</strong><span class="muted small">reporting sections</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:26px">
+        <div class="card">
+          <div class="eyebrow" style="color:#ffe7a0">Why it matches the role</div>
+          <div class="feature" style="margin-top:14px">
+            <strong>Campaign Planning & Execution</strong>
+            <p class="muted small">Built a structured workflow for seasonal events, content drops, and launch support with clear ownership, milestones, and follow-up.</p>
+          </div>
+          <div class="feature" style="margin-top:14px">
+            <strong>Content Calendar Management</strong>
+            <p class="muted small">Created a content calendar format to track captions, assets, approvals, go-live timing, and player-facing communication across channels.</p>
+          </div>
+          <div class="feature" style="margin-top:14px">
+            <strong>Reporting & Summaries</strong>
+            <p class="muted small">Designed lightweight post-campaign reporting to turn launch activity into clear summaries, observations, and next-step recommendations.</p>
+          </div>
+          <div class="feature" style="margin-top:14px">
+            <strong>AI for Team Efficiency</strong>
+            <p class="muted small">Explored how tools like ChatGPT and Claude could support drafting, summaries, checklists, and documentation cleanup in fast-moving workflows.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Workflow stack</div>
+          <h3>Tools I’m comfortable with</h3>
+          <p class="muted">I am comfortable working in modern collaborative tools and interested in using them to support smooth campaign execution and better team visibility.</p>
+          <div class="taglist">
+            <span class="tag">Notion</span>
+            <span class="tag">Google Workspace</span>
+            <span class="tag">Slack</span>
+            <span class="tag">Miro</span>
+            <span class="tag">ChatGPT</span>
+            <span class="tag">Claude</span>
+            <span class="tag">Canva</span>
+            <span class="tag">Figma</span>
+          </div>
+          <div class="feature" style="margin-top:18px;background:rgba(244,200,74,.10);border-color:rgba(244,200,74,.18)">
+            <strong>What I’d bring</strong>
+            <p class="small">A supportive mindset, strong organization, clear written communication, curiosity about games and player communities, and a willingness to learn fast while helping the team stay organized and execution-ready.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid-2">
+      <div>
+        <div class="eyebrow">Workflow</div>
+        <h2 style="font-size:clamp(2rem,4vw,3.1rem);margin:.4rem 0 0">How I structured the campaign process</h2>
+        <p class="lead" style="max-width:560px">
+          I wanted the workflow to be simple, practical, and realistic for a fast-moving team.
+          The structure below shows how planning, coordination, launch support, and follow-up fit together.
+        </p>
+      </div>
+      <div>
+        <div class="step">
+          <div class="num">01</div>
+          <div><strong>Campaign Brief</strong><br><span class="muted">Define event theme, goals, channels, deliverables, and what players need to know.</span></div>
+        </div>
+        <div class="step" style="margin-top:14px">
+          <div class="num">02</div>
+          <div><strong>Tracker Setup</strong><br><span class="muted">Organize deadlines, owners, approvals, blockers, asset status, and publishing flow.</span></div>
+        </div>
+        <div class="step" style="margin-top:14px">
+          <div class="num">03</div>
+          <div><strong>Content Planning</strong><br><span class="muted">Map teasers, launch posts, reminders, and community updates into a clear calendar.</span></div>
+        </div>
+        <div class="step" style="margin-top:14px">
+          <div class="num">04</div>
+          <div><strong>Launch & Review</strong><br><span class="muted">Monitor execution, gather notes, summarize what shipped, and capture learnings for the next cycle.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project">
+    <div class="wrap grid-2">
+      <div class="card">
+        <div class="eyebrow">Sample outputs</div>
+        <h3>What the project includes</h3>
+        <ul class="muted">
+          <li><strong style="color:#fff">Campaign tracker:</strong> milestones, owners, deadlines, approvals, blockers, channels, and publishing status.</li>
+          <li><strong style="color:#fff">Content calendar:</strong> teasers, launch posts, reminders, community updates, and go-live planning.</li>
+          <li><strong style="color:#fff">Documentation set:</strong> briefs, notes, asset references, approval snapshots, and meeting follow-ups.</li>
+          <li><strong style="color:#fff">Reporting summary:</strong> post-launch observations, what worked, what changed, and next-step ideas.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="eyebrow">Relevant background</div>
+        <h3>Experience highlights</h3>
+        <ul class="muted">
+          <li>Marketing-related work with VES in Vaasa</li>
+          <li>Marketing Executive experience with XpertServices AU</li>
+          <li>Customer-facing communication experience through IBEX</li>
+          <li>Technical and structured workflow experience through academic and project work</li>
+        </ul>
+        <div class="feature" style="margin-top:18px">
+          <strong>Why Supercell</strong>
+          <p class="muted small">
+            I’m excited by the chance to support campaigns around a game players care about deeply.
+            What attracts me most is the mix of creativity, structure, collaboration, and learning by doing.
+            I want to grow in a team that values practical contribution and close connection to player experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="eyebrow" style="color:#ffe7a0">Contact</div>
+        <h2 style="font-size:clamp(2rem,4vw,3.1rem);margin:.4rem 0 0">Let’s connect</h2>
+        <p class="lead" style="max-width:760px">
+          Based in Vaasa and open to hybrid or onsite work in Helsinki. I would be excited to
+          contribute to a player-focused marketing team and keep learning in Finland.
+        </p>
+        <div class="grid-3" style="margin-top:20px">
+          <div class="feature"><strong>Name</strong><br><span class="muted">Muhammad Abuzar</span></div>
+          <div class="feature"><strong>Email</strong><br><span class="muted">muhmmadabuzar@gmail.com</span></div>
+          <div class="feature"><strong>LinkedIn</strong><br><span class="muted">abuzar-butt-74b1361b7</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">Built as a single-file portfolio page for easy upload to GitHub Pages, Netlify, or any static hosting service.</div>
+  </footer>
+</body>
+</html>
